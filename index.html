@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EsapSiloeAmbassade</title>
+	<style type="text/css">
+		body{
+			width: 99%;
+			height: 100%;
+			background: #f1f1f1;
+			overflow-x: hidden;
+		}
+		.box{
+			width: 100%;
+			height: 670px;
+			position: relative;
+		}
+		.barre{
+			height: 40px;
+			width: 100%;
+			background: transparent;
+			position: absolute;
+			top: 0;
+			display: flex;
+			z-index: 1000;
+		}
+		.logo{
+            width: 50%;
+            height: 100%;
+            background: transparent;
+		}
+		.page{
+            width: 50%;
+            height: 100%;
+            background: transparent;
+            display: flex;
+		}
+		.one{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 20px;
+            font-family: time new roman;
+            cursor: pointer;
+		}
+		.poche{
+			width: 100%;
+			height: 100%;
+		}
+		.pochet{
+			width: 100%;
+			height: 75%;
+			background: royalblue;
+			border-radius: 10px;
+			position: relative;
+			overflow: hidden;
+		}
+		.pochet img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+
+		.pochette{
+			width: 100%;
+			height: 25%;
+			background: transparent;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 5px 0;
+			gap: 5px;
+		}
+		.lox{
+			width: 100%;
+			height: 100%;
+			background: lightslategray;
+			border-radius: 10px;
+		}
+		.fox{
+			width: 100%;
+			height: 100%;
+			display: flex;
+		}
+		.dox{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			overflow-y: auto;
+		}
+		.wox{
+			width: 75%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+			transition: width .5s;
+		}
+		.wox.sel{
+			width: 0;
+		}
+		.rox{
+			width: 25%;
+			height: 100%;
+			position: relative;
+		}
+		.rox.tost{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		.vox{
+			height: 30px;
+			width: 100%;
+			position: absolute;
+			display: flex;
+			top: 10px;
+			background: transparent;
+		}
+		.mox{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 20px;
+			position: relative;
+		}
+		.mox:hover{
+			color: firebrick;
+			background: gainsboro;
+			cursor: pointer;
+		}
+		.tox{
+			width: 100%;
+			height: 97%;
+			margin-top: 4%;
+			overflow: hidden;
+			overflow-y: auto;
+		}
+		.tox::-webkit-scrollbar{
+             background: transparent;
+              width: 0;
+            }
+        .tox::-webkit-scrollbar-thumb{
+           width: 0;
+           }
+		.nox{
+           width: 100%;
+           height: 100%;
+           padding: 5px;
+           display: none;
+		}
+		.nox.xox{
+			display: block;
+		}
+		.jox{
+			width: 100%;
+			height: 30px;
+			position: absolute;
+			top: 10px;
+			background: transparent;
+		}
+		.joxa{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 20px;
+			color: #000;
+		}
+		.joxa:hover{
+			background: gainsboro;
+			cursor: pointer;
+			color: firebrick;
+		}
+		.joxa.lost{
+			width: 25%;
+			height: 100%;
+		}
+		.hox{
+			width: 100%;
+			height: 94%;
+			margin-top: 40px;
+			background: transparent;
+			padding: 5px;
+			overflow: hidden;
+			display: block;
+		}
+		.hox.jho{
+			width: 0;
+		}
+		.hox .gox{
+			width: 98%;
+			height: 120px;
+			background: gainsboro;
+			margin-bottom: 5px;
+			border-radius: 15px;
+		}
+		.hox .gox.vit{
+			width: 0;
+			height: 230px;
+		}
+		.hox .gox:hover{
+			cursor: pointer;
+			background: gainsboro;	
+		}
+		.cox{
+			width: 0;
+			position: relative;
+			padding: 5px;
+			margin-top: 50px;
+			overflow: hidden;
+			overflow-y: auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.cox.lux{
+			width: 100%;
+		}
+		.cox .gox{
+			width: 17.5%;
+			height: 230px;
+			background: slategray;
+			border-radius: 10px;
+			margin: 5px;
+		}
+		.yox{
+			width: 99%;
+			height: 95%;
+			background: gainsboro;
+			border-radius: 10px;
+		}
+		.pox{
+			width: 200px;
+			height: 220px;
+			background: gainsboro;
+		}
+		.sox{
+			width: 100%;
+			padding: 5px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+			justify-content: center;
+		}
+		.soxy{
+			width: 185px;
+			height: 210px;
+			background: slategray;
+			border-radius: 10px;
+		}
+		.quox{
+			width: 100%;
+			height: 100%;
+			display: flex;
+		}
+		.raf{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		.ref{
+			width: 100%;
+			height: 50%;
+			background: gainsboro;
+		}
+		.rif{
+			width: 100%;
+			height: 50%;
+			background: royalblue;
+			display: flex;
+		}
+		.dom{
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.roll{
+			width: 100%;
+			height: 100%;
+			position: relative;
+		}
+		.all{
+			width: 100%;
+			height: 40px;
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			margin-left: 100px;
+			font-size: 30px;
+            font-family: times new romain;
+            color: #000;
+		}
+		.roy{
+            width: 100%;
+            height: 200px;
+            background: gainsboro;
+		}
+		.gost{
+			width: 100%;
+			height: 410px;
+			background: royalblue;
+			display: flex;
+		}
+		.tall{
+			width: 100%;
+			height: 100%;
+		}
+		.hall{
+			width: 100%;
+			height: 10%;
+			background: transparent;
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			margin-left: 25px;
+			font-size: 28px;
+			font-family: times new romain;
+		}
+	</style>
+</head>
+<body>
+ <div class="box" id="Acceuille">
+ 	<div class="barre">
+ 		<div class="logo"></div>
+ 		<div class="page">
+ 			<div class="one"><a href="#Acceuille">Acceuille</a></div>
+ 			<div class="one"><a href="#about">Nous sommes</a></div>
+ 			<div class="one"><a href="#Actualite">Actualite</a></div>
+ 			<div class="one"><a href="#Contact">Contact</a></div>
+ 			<div class="one">Connexion</div>
+ 		</div>
+ 	</div>
+ 	<div class="poche">
+ 		<div class="pochet">
+ 			<img src="image/WhatsApp Image 2024-11-13 à 08.47.41_b6037c51.jpg">
+ 		</div>
+ 		<div class="pochette">
+ 			<div class="lox"></div>
+ 			<div class="lox"></div>
+ 			<div class="lox"></div>
+ 			<div class="lox"></div>
+ 			<div class="lox"></div>
+ 			<div class="lox"></div>
+ 			<div class="lox"></div>
+ 			<div class="lox"></div>
+ 		</div>
+ 	</div>
+ </div>
+ <div class="box" id="about">
+ 	<div class="roll">
+ 		<div class="all">Nous sommes</div>
+ 		<div class="roy"></div>
+ 		<div class="gost">
+ 			<div class="tall" style="background: ivory;">
+ 				<div class="hall">Notre mission</div>
+ 				<div class="host"></div>
+ 			</div>
+ 			<div class="tall" style="background: lime;">
+ 				<div class="hall"></div>
+ 				<div class="host"></div>
+ 			</div>
+ 			<div class="tall" style="background: salmon;">
+ 				<div class="hall"></div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+ <div class="box" id="Actualite">
+ 	<div class="fox">
+ 		<div class="wox">
+ 			<div class="vox">
+ 				<div class="mox xet" data-kox ="0">Activité</div>
+ 				<div class="mox" data-kox ="1">Galerie</div>
+ 			</div>
+ 	    <div class="tox">
+ 		 <div class="nox xox" id="kox0">
+ 		 	<div class="yox"></div>
+ 		 </div>
+         <div class="nox" id="kox1">
+         	<div class="dox">
+         	<div class="sox">
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         		<div class="soxy"></div>
+         	 </div>	
+         	</div>
+         </div>
+         </div>
+ 		</div>
+ 		<div class="rox">
+ 			<div class="jox">
+ 				<div class="joxa">
+ 					Nos predication
+ 				</div>
+ 				<div class="joxe"></div>
+ 			</div>
+ 			<div class="quox">
+ 			<div class="hox">
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+ 			 </div>
+ 			 <div class="cox">
+ 			  <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+              <div class="gox"></div>
+ 			 </div>
+ 			 </div>
+ 		</div>
+ 	</div>
+ </div>
+ <div class="box" id="Contact">  
+   <div class="raf">
+   	<div class="ref"></div>
+    <div class="rif">
+    	<div class="dom" style="background: red;"></div>
+    	<div class="dom"></div>
+    	<div class="dom"></div>
+    </div>
+   </div>  	
+ </div>
+ <script type="text/javascript">
+ 	let zox = document.querySelectorAll('.mox');
+ 	for (let weus of zox ) {
+ 		weus.addEventListener('click', function() {
+          let num = this.getAttribute('data-kox');
+          document.querySelector('.nox.xox').classList.remove('xox');
+          document.querySelector('#kox' + num).classList.add('xox');
+ 		})
+ 	}
+   let zeus = document.querySelector('.joxa');
+   let max = document.querySelectorAll('.gox');
+   zeus.onclick = function() {
+   	document.querySelector('.wox').classList.add('sel');
+   	document.querySelector('.rox').classList.add('tost');
+   	document.querySelector('.joxa').classList.add('lost');
+   	document.querySelector('.hox').classList.add('jho');
+   	document.querySelector('.cox').classList.add('lux');
+   }
+
+ 	
+
+ </script>
+</body>
+</html> 
